@@ -166,8 +166,12 @@ func (as *Assert) Assert(pred Predicate, format string, a ...interface{}) varArg
 	}
 }
 
-func (as *Assert) IsNil(format string, a ...interface{}) varArgsFunc  {
+func (as *Assert) IsAllNil(format string, a ...interface{}) varArgsFunc  {
 	return as.Assert(AllNil(), format, a...)
+}
+
+func (as *Assert) ExistNotNil(format string, a ...interface{}) varArgsFunc  {
+	return as.Assert(Not(AllNil()), format, a...)
 }
 
 func (as *Assert) Equal(format string, a ...interface{}) varArgsFunc {

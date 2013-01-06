@@ -97,6 +97,6 @@ func TestNil(t* testing.T) {
 	if result, _ := AllNil()(1, nil); result {
 		as.reportError(1, "AllNil(1, nil) expects false but got true")
 	}
-	as.IsNil("IsNil(nil) should be true")(nil)
-	as.IsNil("IsNil(nil, nil) should be true")(nil, nil)
+	as.IsAllNil("IsNil(nil) should be true")(nil)
+	as.IsAllNil("IsNil(nil, nil) should be true")(nil, nil)
 }
